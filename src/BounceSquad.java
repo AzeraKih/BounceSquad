@@ -97,11 +97,8 @@ public class BounceSquad extends JLabel {
 
 		int imgW = img.getWidth();
 		int imgH = img.getHeight();
-
-		int arr[][] = new int[imgW][imgH];
-
+		
 		Color c;
-
 		Random random = new Random();
 
 		int R = random.nextInt(255);
