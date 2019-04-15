@@ -45,36 +45,31 @@ public class mainFrame extends JFrame {
 		panel.setMinimumSize(new Dimension(1, 1));
 		panel.setFocusable(false);
 		panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, Color.BLUE, Color.MAGENTA));
-		panel.setBackground(Color.LIGHT_GRAY);
+		panel.setBackground(Color.BLACK);
 		panel.setLayout(null);
 
 		JButton btnAdd = new JButton("Adicionar Bounce Squad");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addComponent(btnAdd, GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
-				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE)
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(btnAdd)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
-		);
+				.addComponent(panel, GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE));
+		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup().addComponent(btnAdd)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)));
 		contentPane.setLayout(gl_contentPane);
 
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				BounceSquad quadrado = new BounceSquad(5, panel);
-				quadrado.setBounds(50, 15, 50, 50);
+				BounceSquad quadrado = new BounceSquad(7, panel);
+				quadrado.setBounds(50, 15, 100, 62);
 				panel.add(quadrado);
 				quadrado.setBackground(Color.BLACK);
 				quadrado.startBounce();
 
 				quads.add(quadrado);
-				
+
 			}
 		});
 
